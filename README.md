@@ -1,113 +1,43 @@
-IPL Season Winner Predictor
-A machine learning project to forecast the Indian Premier League (IPL) champion. This project analyzes mid-season performance metrics and pre-season auction data to predict the probability of each team winning the tournament.
+# 🏆 IPL Season Winner Predictor
 
-This was submitted as a group project for the course 24AIJ303: Introduction to Machine Learning at the Thangal Kunju Musaliar College of Engineering, Kollam.
+![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen.svg)
+![XGBoost](https://img.shields.io/badge/Model-XGBoost-purple.svg)
 
-🚀 Deployed App
-You can access the live Streamlit app here:
+A group project for the course **24AIJ303: Introduction to Machine Learning** at the Thangal Kunju Musaliar College of Engineering, Kollam.
 
-https://iplpredictorapp.streamlit.app/
+---
 
+## 🚀 **Live Deployed App**
+
+### [➡️ Click Here to Try the Live Predictor](https://iplpredictorapp.streamlit.app/)
 <img width="1911" height="1004" alt="image" src="https://github.com/user-attachments/assets/594ca293-f49e-400d-884a-89992d9e7c5f" />
 
+---
 
-📖 Abstract
-The IPL Season Winner Predictor project forecasts the top four teams and their winning probabilities in the final season using mid-season performance data. The system utilizes the XGBoost algorithm, a powerful ensemble learning method, to build a predictive model.
+## 🎯 **Project Goal**
 
+This project uses an **XGBoost** model to predict the probability of an IPL team winning the tournament. The model is unique because it makes its predictions based on **mid-season performance** (at the halfway point) combined with **pre-season auction data**.
 
+---
 
-Instead of directly predicting a single winner, the model focuses on identifying the top four contenders and their respective probabilities, resulting in a more robust and insightful approach. The key finding reveals that mid-season data, combined with auction statistics, can reliably forecast end-season outcomes.
+## 🛠️ **How It Works**
 
+* **Data:** Match data from [Cricsheet](https://cricsheet.org/) and auction data from [Kaggle](https://www.kaggle.com/).
+* **Model:** An `XGBClassifier` trained to predict a single target: `is_eventual_winner`.
+* **Key Features:** The model's "brain" is built on four engineered features:
+    1.  `points_mid_season`: Points at the halfway mark.
+    2.  `win_pct_mid_season`: Win percentage at the halfway mark.
+    3.  `squad_cost_crores`: Total cost of the team from the auction.
+    4.  `star_player_index`: Number of players on the team costing over 8 Crores.
+* **Evaluation:** We use **Top-4 Accuracy** to check if the actual champion was in our model's top 4 predictions, which is a more realistic metric for sports analytics.
 
+---
 
-🛠️ Technology Stack
-Python: The core programming language.
+## 👥 **Team Members**
 
-
-Pandas & NumPy: For data collection, cleaning, and feature engineering.
-
-
-Scikit-learn: For data preprocessing and model evaluation.
-
-
-XGBoost: The primary machine learning algorithm used for prediction.
-
-
-Streamlit: For building and deploying the interactive web application.
-
-
-Google Colab: The environment used for model development and training.
-
-⚙️ Methodology
-The project follows a systematic data science pipeline:
-
-1. Data Acquisition and Preprocessing
-
-Match Data: Detailed ball-by-ball and match-level records for all IPL seasons were sourced from Cricsheet.
-
-
-
-Auction Data: Player auction data from 2013-2025 was collected from various Kaggle datasets.
-
-
-Cleaning: Data was extensively cleaned, including standardizing team names (e.g., 'Delhi Daredevils' to 'Delhi Capitals') and converting price strings (e.g., '10 Cr') into numerical values.
-
-
-
-2. Feature Engineering
-The model's core features are calculated for each team, each season, based on a "snapshot" of performance at the halfway point of the tournament.
-
-
-The key features include:
-
-
-points_mid_season: Total points a team had at the mid-season mark.
-
-
-win_pct_mid_season: The team's win percentage at the mid-season mark.
-
-
-squad_cost_crores: The total amount spent by the team in the auction.
-
-
-
-star_player_index: A custom metric counting the number of "star" players on a team (defined as players costing over 8 Crores).
-
-
-3. Modeling
-An XGBoost Classifier was trained on historical data (seasons 2013-2020) to predict a binary target: is_eventual_winner.
-
-
-The model was specifically tuned to handle the severe class imbalance (only one winner per season) using the scale_pos_weight parameter.
-
-
-4. Evaluation
-The model was evaluated using Top-N Accuracy, which assesses if the actual champion was present in the model's Top-1, Top-2, Top-3, or Top-4 predictions.
-
-
-This probabilistic approach is more realistic for sports analytics, as it correctly identifies a pool of likely contenders rather than just one winner.
-
-👥 Team Members
-This project was submitted in partial fulfillment of the requirements for the B.Tech degree by the following team:
-
-
-Asna S B [TKM24CA013] 
-
-
-Muhammed Nihal Noushad [TKM24CA037] 
-
-
-Rasheeda P V [TKM24CA045] 
-
-
-Shibin Mahzoom [TKM24CA055] 
-
-
-Shifana T K [TKM24CA056] 
-
-🎓 Acknowledgements
-We extend our sincere gratitude to our project guide and the faculty at the Thangal Kunju Musaliar College of Engineering, Kollam, for their invaluable guidance and support.
-
-Prof. Divya C P (Project Coordinator, Assistant Professor, Dept. of CSE) 
-
-Dr. Aneesh G Nath (Head of the Department, Associate Professor, Dept. of CSE)
+* **Asna S B** `[TKM24CA013]`
+* **Muhammed Nihal Noushad** `[TKM24CA037]`
+* **Rasheeda P V** `[TKM24CA045]`
+* **Shibin Mahzoom** `[TKM24CA055]`
+* **Shifana T K** `[TKM24CA056]`
