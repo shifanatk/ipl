@@ -12,6 +12,7 @@ A group project for the course **24AIJ303: Introduction to Machine Learning** at
 
 ### [➡️ Click Here to Try the Live Predictor](https://iplpredictorapp.streamlit.app/)
 <img width="1911" height="1004" alt="image" src="https://github.com/user-attachments/assets/594ca293-f49e-400d-884a-89992d9e7c5f" />
+### [➡️ Click Here to View the Colab Notebook](https://colab.research.google.com/drive/1tntVaSJGYM4Oa6oDWN4B3Q4QZI_c3wOa?usp=sharing)
 
 ---
 
